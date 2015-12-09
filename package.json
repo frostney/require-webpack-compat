@@ -1,0 +1,23 @@
+{
+  "name": "require-webpack-compat",
+  "version": "1.0.0",
+  "description": "Monkey-patches to make Node's require behave like Webpack's require",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frostney/require-webpack-compat.git"
+  },
+  "keywords": [
+    "require",
+    "webpack"
+  ],
+  "author": "Johannes Stein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frostney/require-webpack-compat/issues"
+  },
+  "homepage": "https://github.com/frostney/require-webpack-compat#readme"
+}
