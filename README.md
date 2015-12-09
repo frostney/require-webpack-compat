@@ -3,14 +3,14 @@
 
 This is meant to simplify Universal JS apps that use Webpack and Node.js.
 
-:warning: Caution: Don't use it in libraries, only for applications
+:warning: Caution: NEVER use it in libraries, only for applications
 
 ## Usage
 ```
 require('require-webpack-compat')(require);
 ```
 
-Afterwards, we have `.context` function on our `require` function. This allows us
+Afterwards, we have `.context` function on our `require` function. This allows us to do all the shenanigans we do with it in our Webpack projects.
 
 ## License
 MIT
