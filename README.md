@@ -5,8 +5,14 @@ This is meant to simplify Universal JS apps that use Webpack and Node.js.
 
 :warning: Caution: NEVER use it in libraries, only for applications
 
-## Usage
+## Installation
+
 ```
+npm install require-webpack-compat --save
+```
+
+## Usage
+```javascript
 require('require-webpack-compat')(require);
 ```
 
