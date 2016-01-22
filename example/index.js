@@ -1,4 +1,4 @@
-require('../')(require);
+require('../')(module, require);
 
 var req = require.context('./', false, /\.js$/);
 
