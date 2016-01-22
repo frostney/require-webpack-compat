@@ -2,6 +2,10 @@ var fs = require('fs');
 var path = require('path');
 
 module.exports = function(req) {
+  if (req.context) {
+    return req;
+  }
+
   getFolderContents = function(folder, recursive) {
     return fs.readdirSync(folder).reduce(function(list, file) {
       var name = path.join(folder, file);
@@ -36,4 +40,6 @@ module.exports = function(req) {
 
     return returnContext;
   };
+
+  return req;
 };
