@@ -13,7 +13,7 @@ npm install require-webpack-compat --save
 
 ## Usage
 ```javascript
-require('require-webpack-compat')(require);
+require('require-webpack-compat')(module, require);
 ```
 
 Afterwards, we have `.context` function on our `require` function. This allows us to do all the shenanigans we do with it in our Webpack projects.
@@ -30,7 +30,7 @@ Otherwise we run into an error while generating the build.
 
 #### index.js
 ```javascript
-require('require-webpack-compat')(require);
+require('require-webpack-compat')(module, require);
 
 var req = require.context('./', false, /\.js$/);
 
