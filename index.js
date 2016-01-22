@@ -1,10 +1,6 @@
 var path = require('path');
 
 module.exports = function(req) {
-  if (req.context) {
-    return req;
-  }
-
   getFolderContents = function(folder, recursive) {
     var fs = require('fs');
 
@@ -16,7 +12,7 @@ module.exports = function(req) {
     }, []);
   };
 
-  req.context = function(folder, recursive, pattern) {
+  req.context = req.context || function(folder, recursive, pattern) {
     var folderContents = getFolderContents(folder, recursive)
     .filter(function(item) {
       // Don't include current file
