@@ -1,4 +1,3 @@
-var fs = require('fs');
 var path = require('path');
 
 module.exports = function(req) {
@@ -7,6 +6,8 @@ module.exports = function(req) {
   }
 
   getFolderContents = function(folder, recursive) {
+    var fs = require('fs');
+
     return fs.readdirSync(folder).reduce(function(list, file) {
       var name = path.join(folder, file);
       var isDir = fs.statSync(name).isDirectory();
