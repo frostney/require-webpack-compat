@@ -1,10 +1,11 @@
 var path = require('path');
 
-module.exports = function(req) {
+module.exports = function(module, req) {
   getFolderContents = function(folder, recursive) {
     var fs = require('fs');
 
     return fs.readdirSync(folder).reduce(function(list, file) {
+
       var name = path.resolve(folder, file);
       var isDir = fs.statSync(name).isDirectory();
 
@@ -13,10 +14,11 @@ module.exports = function(req) {
   };
 
   req.context = req.context || function(folder, recursive, pattern) {
-    var folderContents = getFolderContents(folder, recursive)
+    var normalizedFolder = path.resolve(path.dirname(module.filename), folder);
+    var folderContents = getFolderContents(normalizedFolder, recursive)
     .filter(function(item) {
       // Don't include current file
-      if (item === path.resolve(__filename)) {
+      if (item === module.filename) {
         return false;
       }
 
