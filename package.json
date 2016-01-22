@@ -1,6 +1,6 @@
 {
   "name": "require-webpack-compat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Monkey-patches to make Node's require behave like Webpack's require",
   "main": "index.js",
   "scripts": {
